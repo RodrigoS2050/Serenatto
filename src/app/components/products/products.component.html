@@ -1,0 +1,52 @@
+<section class="row mx-0 py-5">
+  <h2 class="fw-bold text-center pb-1">Nossos Produtos</h2>
+  <div
+    *ngFor="let product of products"
+    class="d-flex align-items-center col-6 col-xl-4 card border-0 btn"
+    data-bs-toggle="modal"
+    attr.data-bs-target="#{{ product.id }}"
+  >
+    <img src="{{ product.src }}" class="card-img-top" alt="{{ product.alt }}" />
+    <div class="card-body">
+      <h3 class="fw-bold text-center">{{ product.title }}</h3>
+    </div>
+  </div>
+</section>
+
+<article
+  *ngFor="let modal of modals"
+  class="modal fade"
+  id="{{ modal.id }}"
+  tabindex="-1"
+  aria-labelledby="modalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 class="modal-title fs-5 fw-bold" id="modalLabel">
+          {{ modal.title }}
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </header>
+      <section class="modal-body">
+        <img src="{{ modal.src }}" alt="{{ modal.alt }}" class="w-100" />
+        <p *ngFor="let desc of modal.description">{{ desc }}</p>
+      </section>
+      <footer class="modal-footer mx-auto">
+        <button
+          type="button"
+          class="btn light-btn border-0"
+          data-bs-dismiss="modal"
+        >
+          Fechar Janela
+        </button>
+      </footer>
+    </div>
+  </div>
+</article>

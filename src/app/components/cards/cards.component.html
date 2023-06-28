@@ -1,0 +1,120 @@
+<section class="py-5">
+  <h2 class="text-center fw-bold pb-1">Nossos serviços</h2>
+  <div class="container d-flex justify-content-around flex-wrap">
+    <div *ngFor="let card of cards" class="card m-4" style="width: 20rem">
+      <img src="{{ card.src }}" class="card-img-top" alt="{{ card.alt }}" />
+      <div class="card-body">
+        <h5 class="card-title py-2 fw-bold">{{ card.title }}</h5>
+        <p class="card-text">
+          {{ card.description }}
+        </p>
+        <button
+          class="btn w-100 fw-bold light-btn"
+          data-bs-toggle="offcanvas"
+          attr.data-bs-target="#{{ card.id }}"
+          aria-controls="offcanvasRight"
+        >
+          Quero detalhes
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div
+    *ngFor="let accordion of accordions"
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="{{ accordion.id }}"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">
+        {{ accordion.title }}
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button fw-bold light-btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              {{ accordion.firstBtn }}
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              {{ accordion.firstDesc }}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed fw-bold light-btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              {{ accordion.secondBtn }}
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              {{ accordion.secondDesc }}
+            </div>
+          </div>
+        </div>
+        <div *ngIf="accordion.thirdBtn" class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed fw-bold light-btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              {{ accordion.thirdBtn }}
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              {{ accordion.thirdDesc }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

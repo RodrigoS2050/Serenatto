@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/styles/variables.scss";
+
+body {
+  font-family: $primary-font !important;
+}
+
+input[type="checkbox"] {
+  border: 2px solid $light-brown;
+  box-shadow: none;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:focus {
+  background-color: $light-brown;
+  border-color: $light-brown;
+  box-shadow: none;
+  outline: none;
+}
+
+.light-btn {
+  background-color: $light-brown !important;
+  color: $black !important;
+  &:hover {
+    background-color: $dark-brown !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  * {
+    color: $white !important;
+  }
+}

@@ -1,0 +1,5 @@
+@import "src/styles/variables.scss";
+
+.input-range::-webkit-slider-thumb {
+  background-color: $light-brown !important;
+}

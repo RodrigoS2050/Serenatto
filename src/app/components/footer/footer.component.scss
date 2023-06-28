@@ -1,0 +1,14 @@
+@import "src/styles/variables.scss";
+
+footer {
+  background-color: $light-brown;
+}
+
+p {
+  margin: 0;
+}
+
+.bi-linkedin,
+.bi-github {
+  font-size: 1.6rem;
+}
