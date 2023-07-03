@@ -35,7 +35,7 @@ Este projeto utiliza o Karma e o Jasmine para criação de testes unitários.
 
 ![Captura de tela 2023-06-28 200733](https://github.com/RodrigoS2050/Serenatto/assets/97991094/7b2def97-9403-429a-83b5-1a8dd44c0c77)
 
-# Rodando o projeto na sua máquina
+# Como rodar o projeto na sua máquina
 
 ## Pré-requisitos
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
